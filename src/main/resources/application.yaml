@@ -1,0 +1,15 @@
+server.port: 4555
+
+spring:
+    datasource:
+        url: jdbc:mysql://eu-cdbr-west-03.cleardb.net:3306/heroku_d128fbed6b62405
+        username: b5504d5a0db4a5
+        password: e7c646d2
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate:
+            ddl-auto: none
+        defer-datasource-initialization: true
+    sql:
+        init:
+            mode: always
