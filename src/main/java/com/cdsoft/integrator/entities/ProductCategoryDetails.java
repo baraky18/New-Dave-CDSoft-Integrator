@@ -9,8 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
-import javax.persistence.*;
-
 @Entity
 @Table(name = "ps_category_lang")
 @NoArgsConstructor

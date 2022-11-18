@@ -1,5 +1,6 @@
 package com.cdsoft.integrator.entities;
 
+import com.cdsoft.integrator.entities.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,10 +28,10 @@ public class Customer {
     @Column(name = "lastname")
     private String lastName;
 
-    @OneToMany
-    private List<Address> addresses;
+    @Column(name = "id_gender")
+    private Gender gender;
 
-//    @Column(name = "phone_number") //TODO to be updated after I understand where does the phone number come from this DB
-    private String phoneNumber = "972528764763"; //TODO (= "972528764763") to be removed after I understand where does the phone number come from this DB
+    @OneToMany(mappedBy = "customerId")
+    private List<Address> addresses;
 }
 

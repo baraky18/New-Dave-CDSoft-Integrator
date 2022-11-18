@@ -12,6 +12,8 @@ public class CustomerToCustomerDetailsDtoMapper implements Mapper<CustomerDetail
         return CustomerDetailsDto.builder()
                 .firstName(customer.getFirstName())
                 .lastName(customer.getLastName())
+                .phoneNumber(customer.getAddresses().get(0).getMobilePhone())
+                .gender(customer.getGender().name())
                 .build();
     }
 }
