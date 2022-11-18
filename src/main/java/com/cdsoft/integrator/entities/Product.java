@@ -30,7 +30,7 @@ public class Product {
     private List<ProductCategoryDetails> productCategoryDetails;
 
     @Column(name = "available_for_order")
-    private String isInStock;
+    private int isInStock;
 
     @OneToOne
     @JoinColumn(name = "id_manufacturer")
