@@ -17,7 +17,7 @@ public class CustomerController {
     @GetMapping(path = "/phone-number/{phoneNumber}")
     @ResponseBody
     public CustomerDetailsDto getCustomerDetails(@PathVariable String phoneNumber) {
-        log.info("CustomerController.getCustomerDetails\n phoneNumber is: "+ phoneNumber);
+        log.info("CustomerController.getCustomerDetails\n phoneNumber is: " + phoneNumber);
         return customerService.getCustomerDetails(phoneNumber);
     }
 }
