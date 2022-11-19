@@ -28,6 +28,7 @@ public class ProductToProductDetailsDtoMapper implements Mapper<ProductDetailsDt
                 .isInStock(productDetails.getIsInStock())
                 .productCategoryDetails(getProductCategoryDetailsDto(productDetails.getProductCategoryDetails()))
                 .manufacturer(manufacturerMapper.map(productDetails.getManufacturer()))
+                .price(productDetails.getPrice())
                 .build();
     }
 

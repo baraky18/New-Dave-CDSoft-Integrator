@@ -35,4 +35,7 @@ public class Product {
     @OneToOne
     @JoinColumn(name = "id_manufacturer")
     private Manufacturer manufacturer;
+
+    @Column(name = "price")
+    private double price;
 }

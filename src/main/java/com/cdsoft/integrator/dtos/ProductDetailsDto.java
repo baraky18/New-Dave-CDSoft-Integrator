@@ -17,4 +17,5 @@ public class ProductDetailsDto {
     private int isInStock;
     private ProductCategoryDetailsDto productCategoryDetails;
     private ManufacturerDto manufacturer;
+    private double price;
 }
