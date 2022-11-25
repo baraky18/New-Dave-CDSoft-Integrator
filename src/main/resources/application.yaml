@@ -1,4 +1,5 @@
-server.port: 4555
+server:
+    port: 4555
 
 spring:
     datasource:
