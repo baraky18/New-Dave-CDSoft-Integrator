@@ -3,9 +3,9 @@ server:
 
 spring:
     datasource:
-        url: jdbc:mysql://eu-cdbr-west-03.cleardb.net:3306/heroku_91eac397761141f
-        username: b0f1eff7dacdc6
-        password: df351b43
+        url: jdbc:mysql://eu-cdbr-west-03.cleardb.net:3306/heroku_e2afeb1a70347c7
+        username: b3e56e505281f6
+        password: fa050b58
     jpa:
         database-platform: org.hibernate.dialect.H2Dialect
         hibernate:
