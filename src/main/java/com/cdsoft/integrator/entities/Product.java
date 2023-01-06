@@ -38,4 +38,10 @@ public class Product {
 
     @Column(name = "price")
     private double price;
+
+    @ManyToMany
+    @JoinTable(name = "ps_product_carrier",
+            joinColumns = {@JoinColumn(name = "id_product")},
+            inverseJoinColumns = {@JoinColumn(name = "id_carrier_reference")})
+    private List<CarrierDelivery> productCarrierDelivery;
 }
