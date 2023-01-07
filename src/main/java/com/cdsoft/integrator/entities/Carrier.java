@@ -22,5 +22,5 @@ public class Carrier {
     private Long carrierId;
 
     @Column(name = "name")
-    private Long carrierName;
+    private String carrierName;
 }
