@@ -18,4 +18,5 @@ public class ProductDetailsDto {
     private ProductCategoryDetailsDto productCategoryDetails;
     private ManufacturerDto manufacturer;
     private double price;
+    private DeliveryDetailsDto deliveryDetails;
 }

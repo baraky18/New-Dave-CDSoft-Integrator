@@ -39,9 +39,9 @@ public class Product {
     @Column(name = "price")
     private double price;
 
-    @ManyToMany
+    @ManyToOne
     @JoinTable(name = "ps_product_carrier",
             joinColumns = {@JoinColumn(name = "id_product")},
             inverseJoinColumns = {@JoinColumn(name = "id_carrier_reference")})
-    private List<CarrierDelivery> productCarrierDelivery;
+    private CarrierDelivery productCarrierDelivery;
 }

@@ -17,6 +17,7 @@ import static com.cdsoft.integrator.util.Constants.PRODUCT;
 public class ProductToProductDetailsDtoMapper implements Mapper<ProductDetailsDto, ProductDetails> {
 
     private final ManufacturerToManufacturerDtoMapper manufacturerMapper;
+    private final DeliveryTimeToDeliveryDetailsDtoMapper deliveryDetailsMapper;
 
 
     @Override
@@ -29,6 +30,7 @@ public class ProductToProductDetailsDtoMapper implements Mapper<ProductDetailsDt
                 .productCategoryDetails(getProductCategoryDetailsDto(productDetails.getProductCategoryDetails()))
                 .manufacturer(manufacturerMapper.map(productDetails.getManufacturer()))
                 .price(productDetails.getPrice())
+                .deliveryDetails(deliveryDetailsMapper.map(productDetails.getProductCarrierDelivery().getDeliveryTime()))
                 .build();
     }
 
