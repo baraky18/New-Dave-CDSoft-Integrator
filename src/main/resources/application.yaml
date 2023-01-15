@@ -2,10 +2,14 @@ server:
     port: 4555
 
 spring:
+#    datasource:
+#        url: jdbc:mysql://eu-cdbr-west-03.cleardb.net:3306/heroku_e2afeb1a70347c7
+#        username: b3e56e505281f6
+#        password: fa050b58
     datasource:
-        url: jdbc:mysql://eu-cdbr-west-03.cleardb.net:3306/heroku_e2afeb1a70347c7
-        username: b3e56e505281f6
-        password: fa050b58
+        url: jdbc:mysql://185.106.128.200:3306/cdsoft1_temp
+        username: cdsoft1_barak
+        password: Barak1234!
     jpa:
         database-platform: org.hibernate.dialect.H2Dialect
         hibernate:
