@@ -18,3 +18,6 @@ spring:
     sql:
         init:
             mode: always
+
+#CLEARDB_DATABASE_URL
+#mysql://b3e56e505281f6:fa050b58@eu-cdbr-west-03.cleardb.net/heroku_e2afeb1a70347c7?reconnect=true
