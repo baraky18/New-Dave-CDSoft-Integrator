@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "ps_product_lang")
@@ -22,4 +23,7 @@ public class ProductDetails extends Product {
 
     @Column(name = "description_short")
     private String productShortDescription;
+
+    @OneToMany(mappedBy = "productDetails")
+    private List<ProductFeaturesValues> productFeaturesValues;
 }

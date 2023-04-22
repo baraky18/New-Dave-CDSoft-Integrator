@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,4 +21,5 @@ public class ProductDetailsDto {
     private ManufacturerDto manufacturer;
     private double price;
     private String deliveryDetails;
+    private List<FeatureValueDto> featuresValues;
 }

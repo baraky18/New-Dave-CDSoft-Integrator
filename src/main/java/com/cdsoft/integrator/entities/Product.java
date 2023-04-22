@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -27,7 +28,7 @@ public class Product {
     @JoinTable(name = "ps_category_product",
             joinColumns = {@JoinColumn(name = "id_product")},
             inverseJoinColumns = {@JoinColumn(name = "id_category")})
-    private List<ProductCategoryDetails> productCategoryDetails;
+    private Set<ProductCategoryDetails> productCategoryDetails;
 
     @Column(name = "available_for_order")
     private int isInStock;
@@ -39,9 +40,9 @@ public class Product {
     @Column(name = "price")
     private double price;
 
-    @ManyToOne
+    @ManyToMany
     @JoinTable(name = "ps_product_carrier",
             joinColumns = {@JoinColumn(name = "id_product")},
             inverseJoinColumns = {@JoinColumn(name = "id_carrier_reference")})
-    private CarrierDelivery productCarrierDelivery;
+    private List<CarrierDelivery> productCarrierDelivery;
 }

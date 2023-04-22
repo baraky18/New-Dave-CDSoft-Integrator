@@ -7,8 +7,8 @@ import com.cdsoft.integrator.entities.ProductDetails;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import static com.cdsoft.integrator.util.Constants.PRODUCT;
 
@@ -18,7 +18,7 @@ public class ProductToProductDetailsDtoMapper implements Mapper<ProductDetailsDt
 
     private final ManufacturerToManufacturerDtoMapper manufacturerMapper;
     private final DeliveryTimeToDeliveryDetailsDtoMapper deliveryDetailsMapper;
-
+    private final ProductFeaturesValuesToFeatureValuesDtoMapper featureValuesMapper;
 
     @Override
     public ProductDetailsDto map(ProductDetails productDetails) {
@@ -30,11 +30,12 @@ public class ProductToProductDetailsDtoMapper implements Mapper<ProductDetailsDt
                 .productCategoryDetails(getProductCategoryDetailsDto(productDetails.getProductCategoryDetails()))
                 .manufacturer(manufacturerMapper.map(productDetails.getManufacturer()))
                 .price(productDetails.getPrice())
-                .deliveryDetails(deliveryDetailsMapper.map(productDetails.getProductCarrierDelivery().getDeliveryTime()))
+                .deliveryDetails(deliveryDetailsMapper.map(productDetails.getProductCarrierDelivery().get(0).getDeliveryTime()))
+                .featuresValues(featureValuesMapper.map(productDetails.getProductFeaturesValues()))
                 .build();
     }
 
-    private ProductCategoryDetailsDto getProductCategoryDetailsDto(List<ProductCategoryDetails> productCategoriesDetails){
+    private ProductCategoryDetailsDto getProductCategoryDetailsDto(Set<ProductCategoryDetails> productCategoriesDetails){
         Optional<ProductCategoryDetails> optionalCategory =
                 productCategoriesDetails.stream()
                         .filter(p -> p.getProductCategoryParentId().intValue() == 2)
