@@ -32,7 +32,7 @@ public class ProductService {
 
     public ProductsDetailsDto getSimilarProductsDetails(List<FeatureValueDto> featureValueDtoList) {
         log.info("ProductService.getSimilarProductsDetails");
-        Optional<List<ProductDetails>> productsDetailsOptional = productDetailsRepository.getAllByProductFeaturesValues(featureValueDtoList);
+        Optional<List<ProductDetails>> productsDetailsOptional = productDetailsRepository.getAllByProductFeaturesValuesIn(featureValueDtoList);
         List<ProductDetails> productsDetails = productsDetailsOptional.orElseGet(ArrayList::new);
         List<ProductDetailsDto> productDetailsDtoList = productsDetails.stream()
                 .map(productToProductDetailsDtoMapper::map)

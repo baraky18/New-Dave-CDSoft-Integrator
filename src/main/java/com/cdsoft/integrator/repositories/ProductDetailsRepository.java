@@ -13,5 +13,5 @@ public interface ProductDetailsRepository extends CrudRepository<ProductDetails,
 
     Optional<ProductDetails> getByProductName(String productName);
 
-    Optional<List<ProductDetails>> getAllByProductFeaturesValues(List<FeatureValueDto> featureValueDtoList);
+    Optional<List<ProductDetails>> getAllByProductFeaturesValuesIn(List<FeatureValueDto> featureValueDtoList);
 }
